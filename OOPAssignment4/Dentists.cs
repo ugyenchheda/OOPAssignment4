@@ -75,5 +75,12 @@ class Dentists
         }
     }
 
-
+    public void DeleteDentist(SqlConnection connection, int id)
+    {
+        using (SqlCommand command = new SqlCommand("DELETE FROM Dentist WHERE Id = @id", connection))
+        {
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+        }
+    }
 }

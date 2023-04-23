@@ -103,7 +103,7 @@ namespace OOPAssignment4
                             }
                             else
                             {
-                                dentists.DeleteDentist(sqlConnection, dentistToDelete);
+                                dentists.DeleteDentist(sqlConnection, idToDelete);
                                 Console.WriteLine("Dentist with ID {0} deleted from the database.", idToDelete);
                             }
 
