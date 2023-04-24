@@ -1,5 +1,6 @@
-﻿using System.Data.SqlClient;
-using OOPAssignment4;
+﻿using System.Data;
+using System.Data.SqlClient;
+
 class Dentist
 {
     public int Id { get; set; }
@@ -75,12 +76,14 @@ class Dentists
         }
     }
 
-    public void DeleteDentist(SqlConnection connection, int id)
+    public void DeleteDentist(SqlConnection connection, string removeDentist)
     {
-        using (SqlCommand command = new SqlCommand("DELETE FROM Dentist WHERE Id = @id", connection))
+        using (SqlCommand command = new SqlCommand("DELETE FROM Dentist WHERE Name=@dName", connection))
         {
-            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@dName", removeDentist);
             command.ExecuteNonQuery();
         }
     }
+
+
 }
