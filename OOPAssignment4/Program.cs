@@ -5,11 +5,8 @@ using System.IO;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-
-
 namespace OOPAssignment4
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -199,7 +196,6 @@ namespace OOPAssignment4
                         more = true;
                     else
                         more = false;
-
                 } while (more);
             }
         }
